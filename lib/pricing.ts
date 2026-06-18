@@ -7,6 +7,8 @@ export type PricingPlan = {
   highlighted?: boolean;
   // No fixed price — shows a "Contact" CTA instead of "Book".
   contactOnly?: boolean;
+  // Pre-filled WhatsApp message for this package's button.
+  whatsapp: { es: string; en: string };
 };
 
 // Lee's real session packages (prices in USD — Puerto Rico).
@@ -22,6 +24,10 @@ export const pricingPlans: PricingPlan[] = [
     features: {
       es: ["Sesión fotográfica personalizada", "10 imágenes editadas", "1 ubicación"],
       en: ["Personalized photo session", "10 edited images", "1 location"],
+    },
+    whatsapp: {
+      es: "Hola Lee 👋, vi tu portafolio y me encantaría saber más sobre el paquete Esencia.",
+      en: "Hi Lee 👋, I saw your portfolio and I'd love to know more about the Essence package.",
     },
   },
   {
@@ -47,6 +53,10 @@ export const pricingPlans: PricingPlan[] = [
       ],
     },
     highlighted: true,
+    whatsapp: {
+      es: "Hola Lee 👋, vi tu portafolio y me encantaría saber más sobre el paquete Luz Dorada.",
+      en: "Hi Lee 👋, I saw your portfolio and I'd love to know more about the Golden Hour package.",
+    },
   },
   {
     id: "experiencia",
@@ -69,6 +79,10 @@ export const pricingPlans: PricingPlan[] = [
         "Up to 2 nearby locations",
         "2 outfit changes",
       ],
+    },
+    whatsapp: {
+      es: "Hola Lee 👋, vi tu portafolio y me encantaría saber más sobre el paquete Experiencia.",
+      en: "Hi Lee 👋, I saw your portfolio and I'd love to know more about the Experience package.",
     },
   },
   {
@@ -94,5 +108,9 @@ export const pricingPlans: PricingPlan[] = [
       ],
     },
     contactOnly: true,
+    whatsapp: {
+      es: "Hola Lee 👋, vi tu portafolio y me encantaría saber más sobre el paquete para Marca & Producto.",
+      en: "Hi Lee 👋, I saw your portfolio and I'd love to know more about the Brand & Product package.",
+    },
   },
 ];

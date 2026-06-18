@@ -82,7 +82,7 @@ export function Pricing() {
                 </ul>
 
                 <a
-                  href={whatsappLink(lang)}
+                  href={whatsappLink(lang, plan.whatsapp[lang])}
                   target="_blank"
                   rel="noopener noreferrer"
                   className={`mt-8 inline-flex cursor-pointer items-center justify-center rounded-full px-6 py-3 text-sm font-medium transition-colors duration-200 ${

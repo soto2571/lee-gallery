@@ -20,13 +20,11 @@ export function Gallery() {
   const [active, setActive] = useState<ActiveStrip | null>(null);
 
   return (
-    <section id="work" className="py-24 sm:py-32">
-      <div className="mx-auto mb-14 max-w-container px-4">
-        <Reveal className="max-w-2xl">
-          <h2 className="font-display text-4xl font-light leading-tight tracking-tightest text-forest sm:text-5xl">
-            {t.work.subtitle}
-          </h2>
-        </Reveal>
+    <section id="work" className="pb-24 pt-6 sm:pb-32 sm:pt-8">
+      <div className="mx-auto mb-10 max-w-container px-4 sm:mb-14">
+        <h2 className="font-display text-[20vw] font-light leading-[0.82] tracking-tightest text-forest sm:text-[14vw] lg:text-[11rem]">
+          {t.work.subtitle}
+        </h2>
       </div>
 
       <div className="space-y-16">

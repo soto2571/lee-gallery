@@ -13,7 +13,7 @@ export const dictionary = {
       eyebrow: "Fotografía · Retrato · Marca · Producto",
       title: "Capturamos la luz de tu historia.",
       subtitle:
-        "Lee's Gallery es un estudio de fotografía moderna. Imágenes limpias, editoriales y atemporales para personas y marcas.",
+        "Lee's Gallery crea arte inspirada en la conexión, la emoción y la belleza de lo real.",
       cta: "Ver el trabajo",
       ctaSecondary: "Reservar por WhatsApp",
     },
@@ -77,7 +77,7 @@ export const dictionary = {
       eyebrow: "Photography · Portrait · Brand · Product",
       title: "We capture the light of your story.",
       subtitle:
-        "Lee's Gallery is a modern photography studio. Clean, editorial and timeless images for people and brands.",
+        "Lee's Gallery creates art inspired by connection, emotion and the beauty of the real.",
       cta: "View the work",
       ctaSecondary: "Book on WhatsApp",
     },

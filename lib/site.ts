@@ -10,13 +10,14 @@ export const siteConfig = {
   location: "Mayagüez y áreas cercanas, PR",
 };
 
-// Pre-filled WhatsApp messages per language.
+// Default pre-filled WhatsApp message (general buttons: contact, navbar, hero,
+// footer, floating). Pricing buttons pass their own package-specific message.
 export const whatsappMessages = {
-  es: "Hola Lee 👋, vi tu portafolio y me encantaría reservar una sesión.",
-  en: "Hi Lee 👋, I saw your portfolio and I'd love to book a session.",
+  es: "Hola Lee 👋, vi tu portafolio y me encantaría saber más información sobre los servicios.",
+  en: "Hi Lee 👋, I saw your portfolio and I'd love to know more about your services.",
 };
 
-export function whatsappLink(lang: "es" | "en") {
-  const text = encodeURIComponent(whatsappMessages[lang]);
+export function whatsappLink(lang: "es" | "en", message?: string) {
+  const text = encodeURIComponent(message ?? whatsappMessages[lang]);
   return `https://wa.me/${siteConfig.whatsapp}?text=${text}`;
 }
