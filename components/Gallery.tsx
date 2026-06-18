@@ -23,9 +23,6 @@ export function Gallery() {
     <section id="work" className="py-24 sm:py-32">
       <div className="mx-auto mb-14 max-w-container px-4">
         <Reveal className="max-w-2xl">
-          <p className="mb-4 text-xs font-medium uppercase tracking-[0.22em] text-forest-500">
-            {t.work.title}
-          </p>
           <h2 className="font-display text-4xl font-light leading-tight tracking-tightest text-forest sm:text-5xl">
             {t.work.subtitle}
           </h2>

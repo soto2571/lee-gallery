@@ -19,7 +19,7 @@ export const dictionary = {
     },
     work: {
       title: "Portafolio",
-      subtitle: "Una selección de proyectos recientes.",
+      subtitle: "Mi Galería",
       all: "Todo",
       viewAll: "Ver todas",
       empty: "Próximamente — nuevas fotos en camino.",
@@ -31,8 +31,8 @@ export const dictionary = {
     },
     about: {
       eyebrow: "Sobre Lee",
-      title: "Una mirada cálida, un acabado impecable.",
-      body: "Soy Lee, fotógrafa enfocada en retrato, marca y producto. Mi trabajo busca lo esencial: composiciones limpias, luz natural y momentos honestos. Cada sesión está pensada para que te sientas cómoda y para que el resultado se vea atemporal.",
+      title: "Sobre Mí",
+      body: "Encuentro belleza en los detalles, las emociones y las historias que nos rodean. A través de mi fotografía busco capturar momentos auténticos, crear conexiones y transformar instantes en recuerdos que se sienten.",
       stats: {
         years: "Años de experiencia",
         sessions: "Sesiones realizadas",
@@ -52,9 +52,9 @@ export const dictionary = {
     },
     contact: {
       eyebrow: "Contacto",
-      title: "Hagamos algo bonito juntas.",
+      title: "Hagamos algo bonito juntos.",
       subtitle:
-        "Cuéntame sobre tu proyecto y te respondo lo antes posible. La forma más rápida es por WhatsApp.",
+        "Cuéntame sobre tu idea y te respondo lo antes posible. La forma más rápida es por WhatsApp.",
       whatsapp: "Escribir por WhatsApp",
       email: "Enviar un correo",
       location: "Ubicación",
@@ -82,8 +82,8 @@ export const dictionary = {
       ctaSecondary: "Book on WhatsApp",
     },
     work: {
-      title: "Work",
-      subtitle: "A selection of recent projects.",
+      title: "Portfolio",
+      subtitle: "My Gallery",
       all: "All",
       viewAll: "View all",
       empty: "Coming soon — new photos on the way.",
@@ -95,8 +95,8 @@ export const dictionary = {
     },
     about: {
       eyebrow: "About Lee",
-      title: "A warm eye, a flawless finish.",
-      body: "I'm Lee, a photographer focused on portrait, brand and product work. My images chase the essentials: clean composition, natural light and honest moments. Every session is designed to make you feel at ease — and to look timeless.",
+      title: "About Me",
+      body: "I find beauty in the details, the emotions and the stories around us. Through my photography I seek to capture authentic moments, create connections and turn instants into memories you can feel.",
       stats: {
         years: "Years of experience",
         sessions: "Sessions delivered",
@@ -118,7 +118,7 @@ export const dictionary = {
       eyebrow: "Contact",
       title: "Let's make something beautiful.",
       subtitle:
-        "Tell me about your project and I'll get back to you as soon as I can. The fastest way is WhatsApp.",
+        "Tell me about your idea and I'll get back to you as soon as I can. The fastest way is WhatsApp.",
       whatsapp: "Message on WhatsApp",
       email: "Send an email",
       location: "Location",
