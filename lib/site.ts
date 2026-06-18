@@ -4,7 +4,7 @@ export const siteConfig = {
   // WhatsApp number in international format, digits only (no +, spaces or dashes).
   // Puerto Rico uses the +1 country code: 1 + 787 210 4745.
   whatsapp: "17872104745",
-  email: "hello@leesgallery.com",
+  email: "leesgallerytm@gmail.com",
   instagram: "https://www.instagram.com/lees_gallery",
   // City / location shown in the contact section.
   location: "Mayagüez y áreas cercanas, PR",
