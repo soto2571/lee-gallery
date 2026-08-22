@@ -68,6 +68,15 @@ export const galleryImages: GalleryImage[] = [
   { id: "editorial3", src: "/images/editorial3.JPG", category: "portraits", width: 3360, height: 5040, alt: { es: "Retrato editorial", en: "Editorial portrait" } },
   { id: "editorial4", src: "/images/editorial4.JPG", category: "portraits", width: 3456, height: 5184, alt: { es: "Retrato editorial", en: "Editorial portrait" } },
   { id: "editorial1", src: "/images/editorial1.JPG", category: "portraits", width: 3368, height: 4910, alt: { es: "Retrato editorial", en: "Editorial portrait" } },
+  { id: "alo1", src: "/images/alo_1.jpg", category: "portraits", width: 3456, height: 5184, alt: { es: "Retrato editorial", en: "Editorial portrait" } },
+  { id: "alo2", src: "/images/alo_2.jpg", category: "portraits", width: 3390, height: 5085, alt: { es: "Editorial con luz natural", en: "Editorial in natural light" } },
+  { id: "alo3", src: "/images/alo_3.jpg", category: "portraits", width: 3456, height: 5184, alt: { es: "Retrato editorial", en: "Editorial portrait" } },
+  { id: "alo4", src: "/images/alo_4.jpg", category: "portraits", width: 3379, height: 5068, alt: { es: "Editorial de moda", en: "Fashion editorial" } },
+  { id: "alo5", src: "/images/alo_5.jpg", category: "portraits", width: 3456, height: 5184, alt: { es: "Retrato editorial", en: "Editorial portrait" } },
+  { id: "alo6", src: "/images/alo_6.jpg", category: "portraits", width: 3423, height: 5134, alt: { es: "Editorial de moda", en: "Fashion editorial" } },
+  { id: "alo7", src: "/images/alo_7.jpg", category: "portraits", width: 3456, height: 5184, alt: { es: "Retrato editorial", en: "Editorial portrait" } },
+  { id: "alo8", src: "/images/alo_8.jpg", category: "portraits", width: 3456, height: 5184, alt: { es: "Editorial con luz natural", en: "Editorial in natural light" } },
+  { id: "alo9", src: "/images/alo_9.jpg", category: "portraits", width: 3338, height: 5019, alt: { es: "Retrato editorial", en: "Editorial portrait" } },
 
   // ---------- Products ----------
   { id: "product1", src: "/images/product1.JPG", category: "products", width: 3358, height: 5037, alt: { es: "Producto en bodegón", en: "Product still life" } },
