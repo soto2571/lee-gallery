@@ -1,10 +1,6 @@
 import type { Metadata } from "next";
 import { Fraunces, Inter } from "next/font/google";
 import "./globals.css";
-import { LanguageProvider } from "@/components/LanguageProvider";
-import { Navbar } from "@/components/Navbar";
-import { Footer } from "@/components/Footer";
-import { FloatingWhatsApp } from "@/components/FloatingWhatsApp";
 
 const display = Fraunces({
   subsets: ["latin"],
@@ -40,14 +36,7 @@ export default function RootLayout({
       lang="es"
       className={`${display.variable} ${sans.variable}`}
     >
-      <body>
-        <LanguageProvider>
-          <Navbar />
-          {children}
-          <Footer />
-          <FloatingWhatsApp />
-        </LanguageProvider>
-      </body>
+      <body>{children}</body>
     </html>
   );
 }

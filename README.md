@@ -20,16 +20,44 @@ npm run start    # correr el build de producción
 | Qué cambiar | Archivo |
 |-------------|---------|
 | Número de WhatsApp, email, ubicación, Instagram | `lib/site.ts` |
-| Fotos de la galería (categorías, alt text) | `lib/gallery.ts` |
+| Fotos de la galería | **el panel `/admin`** (ver abajo) |
 | Precios y paquetes | `lib/pricing.ts` |
 | Textos (ES / EN) | `lib/i18n.ts` |
 | Colores y tipografías | `tailwind.config.ts` |
 
-### Usar tus propias fotos
+## Panel de fotos (`/admin`)
 
-1. Copia las imágenes a la carpeta `public/gallery/` (por ejemplo `public/gallery/retrato-01.jpg`).
-2. En `lib/gallery.ts`, cambia cada `src` de la URL de Unsplash a la ruta local, p. ej. `"/gallery/retrato-01.jpg"`.
-3. Las fotos actuales son **placeholders de Unsplash** solo para previsualizar el diseño.
+Lee sube sus propias fotos desde **https://tu-sitio.com/admin** — sin tocar código
+ni hacer deploy. El enlace no aparece en ningún menú del sitio: hay que escribirlo.
+
+- **Usuario:** `ShayAdmin` · **Contraseña:** `Password!234`
+  (cámbialos con las variables `ADMIN_USER` / `ADMIN_PASSWORD`, ver `.env.example`)
+- Elige la sección (Retratos / Brands / Products), arrastra o escoge las fotos,
+  opcionalmente escribe una descripción, y le da a **Subir**.
+- Cada foto se puede **reordenar** (← →), **renombrar** (✎) y **borrar** (✕).
+  El orden del panel es el orden en el sitio.
+- Las fotos se reducen a 2560 px en el navegador antes de subirse, así que una
+  foto de cámara de 20 MB viaja como ~500 KB y el sitio sigue rápido.
+- Los cambios se ven en el sitio al instante, sin redeploy.
+
+### Dónde se guardan las fotos
+
+| Entorno | Fotos | Datos de la galería |
+|---------|-------|---------------------|
+| Producción (Vercel) | Vercel Blob | JSON en Vercel Blob |
+| `npm run dev` sin token | `public/uploads/` | `.data/gallery.json` |
+
+Para que funcione en producción hay que conectar el almacenamiento **una sola vez**:
+
+1. Vercel → tu proyecto → **Storage** → **Create Database** → **Blob** → conéctalo al proyecto.
+2. Vercel inyecta solo la variable `BLOB_READ_WRITE_TOKEN`.
+3. Añade `ADMIN_USER`, `ADMIN_PASSWORD` y `ADMIN_SECRET` en **Settings → Environment Variables**.
+4. Redeploy.
+
+Mientras no se haya subido nada desde el panel, el sitio muestra las fotos
+originales de `lib/gallery.ts` (`seedImages`, servidas desde `public/images`).
+El primer cambio hecho en el panel se guarda encima de esa lista; desde ahí,
+editar `lib/gallery.ts` a mano ya no cambia lo que se ve.
 
 ### WhatsApp
 

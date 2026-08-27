@@ -2,46 +2,50 @@ export type Category = "portraits" | "brands" | "products";
 
 export const CATEGORY_IDS = ["portraits", "brands", "products"] as const;
 
-export type CategoryMeta = {
-  id: Category;
-  /** Display order shown in the horizontal strip, e.g. "01". */
-  order: string;
-  /** Cover image for the strip card; null = no photos yet. */
-  cover: string | null;
+/** Display order shown next to each row title, e.g. "01". */
+export const CATEGORY_ORDER: Record<Category, string> = {
+  portraits: "01",
+  brands: "02",
+  products: "03",
 };
-
-export const categories: CategoryMeta[] = [
-  { id: "portraits", order: "01", cover: "/images/portrait2.JPG" },
-  { id: "brands", order: "02", cover: "/images/brand1.JPG" },
-  { id: "products", order: "03", cover: null },
-];
-
-export function imagesByCategory(category: Category) {
-  return galleryImages.filter((img) => img.category === category);
-}
-
-export function isCategory(value: string): value is Category {
-  return (CATEGORY_IDS as readonly string[]).includes(value);
-}
 
 export type GalleryImage = {
   id: string;
   src: string;
   category: Category;
   alt: { es: string; en: string };
-  // Real pixel dimensions — used to preserve aspect ratio in the masonry grid.
+  // Real pixel dimensions — used to preserve aspect ratio in the grids.
   width: number;
   height: number;
+  /** Blob pathname, only for photos uploaded from the admin panel. */
+  storageKey?: string;
+  /** ISO date the photo was uploaded from the admin panel. */
+  uploadedAt?: string;
 };
 
+/** The whole gallery, as stored in the JSON that the admin panel edits. */
+export type GalleryData = {
+  images: GalleryImage[];
+};
+
+export function isCategory(value: string): value is Category {
+  return (CATEGORY_IDS as readonly string[]).includes(value);
+}
+
+export function imagesByCategory(images: GalleryImage[], category: Category) {
+  return images.filter((img) => img.category === category);
+}
+
 /**
- * Lee's real photography, served from /public/images.
- * To add more: drop the file in /public/images and add an entry here with its
- * real width/height (run `sips -g pixelWidth -g pixelHeight file.JPG`).
+ * Lee's original photography, committed in /public/images.
  *
- * "products" has no photos yet — the gallery shows a "coming soon" state for it.
+ * This is only the *seed*: the live gallery lives in a JSON managed from
+ * /admin (see lib/gallery-store.ts). The seed is what the site shows before
+ * the first change is made from the panel, and the starting point that first
+ * change is saved on top of. Editing this array by hand no longer affects a
+ * site whose gallery has already been saved from the panel.
  */
-export const galleryImages: GalleryImage[] = [
+export const seedImages: GalleryImage[] = [
   // ---------- Retratos ----------
   { id: "portrait1", src: "/images/portrait.JPG", category: "portraits", width: 3349, height: 5023, alt: { es: "Retrato editorial", en: "Editorial portrait" } },
   { id: "portrait2", src: "/images/portrait2.JPG", category: "portraits", width: 3456, height: 5184, alt: { es: "Retrato con luz natural", en: "Portrait in natural light" } },

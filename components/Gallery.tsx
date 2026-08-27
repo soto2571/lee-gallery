@@ -4,7 +4,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import {
-  categories,
+  CATEGORY_IDS,
+  CATEGORY_ORDER,
   imagesByCategory,
   type GalleryImage,
 } from "@/lib/gallery";
@@ -15,7 +16,7 @@ import { ArrowRightIcon } from "./icons";
 
 type ActiveStrip = { images: GalleryImage[]; index: number };
 
-export function Gallery() {
+export function Gallery({ images: allImages }: { images: GalleryImage[] }) {
   const { t, lang } = useLanguage();
   const [active, setActive] = useState<ActiveStrip | null>(null);
 
@@ -28,17 +29,17 @@ export function Gallery() {
       </div>
 
       <div className="space-y-16">
-        {categories.map((cat) => {
-          const images = imagesByCategory(cat.id);
-          const label = t.work.categories[cat.id];
+        {CATEGORY_IDS.map((id) => {
+          const images = imagesByCategory(allImages, id);
+          const label = t.work.categories[id];
 
           return (
-            <Reveal key={cat.id}>
+            <Reveal key={id}>
               {/* Row title */}
               <div className="mx-auto mb-5 flex max-w-container items-end justify-between gap-4 px-4">
                 <h3 className="flex items-baseline gap-3 font-display text-2xl font-normal text-forest sm:text-3xl">
                   <span className="text-sm font-medium tracking-[0.18em] text-forest-400">
-                    {cat.order}
+                    {CATEGORY_ORDER[id]}
                   </span>
                   {label}
                 </h3>
@@ -48,7 +49,7 @@ export function Gallery() {
                       {images.length} {lang === "es" ? "fotos" : "photos"}
                     </span>
                     <Link
-                      href={`/work/${cat.id}`}
+                      href={`/work/${id}`}
                       className="group inline-flex shrink-0 cursor-pointer items-center gap-2 rounded-full border border-forest/25 px-4 py-2 text-xs font-medium text-forest transition-colors duration-200 hover:bg-forest hover:text-cream-50"
                     >
                       {t.work.viewAll}

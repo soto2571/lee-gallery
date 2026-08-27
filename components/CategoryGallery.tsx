@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
-import { imagesByCategory, type Category } from "@/lib/gallery";
+import type { Category, GalleryImage } from "@/lib/gallery";
 import { useLanguage } from "./LanguageProvider";
 import { Reveal } from "./Reveal";
 import { Lightbox } from "./Lightbox";
@@ -22,9 +22,14 @@ const BENTO_SPANS = [
   "col-span-1 row-span-1",
 ];
 
-export function CategoryGallery({ category }: { category: Category }) {
+export function CategoryGallery({
+  category,
+  images,
+}: {
+  category: Category;
+  images: GalleryImage[];
+}) {
   const { t, lang } = useLanguage();
-  const images = imagesByCategory(category);
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
 
   const title = t.work.categories[category];

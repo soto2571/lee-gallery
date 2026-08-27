@@ -5,6 +5,10 @@
 
 # Original full-res photos (backups, not used by the site — see public/images)
 /images
+
+# Local-dev gallery store (production uses Vercel Blob)
+/.data
+/public/uploads
 .DS_Store
 *.pem
 npm-debug.log*

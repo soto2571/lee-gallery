@@ -3,12 +3,19 @@ import { Gallery } from "@/components/Gallery";
 import { About } from "@/components/About";
 import { Pricing } from "@/components/Pricing";
 import { Contact } from "@/components/Contact";
+import { getGallery } from "@/lib/gallery-store";
 
-export default function Home() {
+// The gallery is edited from /admin, so it is read on every request instead of
+// being frozen into the build.
+export const dynamic = "force-dynamic";
+
+export default async function Home() {
+  const { images } = await getGallery();
+
   return (
     <main>
       <Hero />
-      <Gallery />
+      <Gallery images={images} />
       <About />
       <Pricing />
       <Contact />
